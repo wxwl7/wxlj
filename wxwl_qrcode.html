@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>二维码详情</title>
+    <link rel="icon" href="data:,">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"> 
+    <meta name="format-detection" content="telephone=no"> 
+    <style type="text/css">
+        body,html{
+            background-color: #f8f8f8;
+            padding: 0px;
+            margin: 0px;
+            width: 100%;
+            height: 100%;
+            color: #484848;
+        }
+        .content{
+            width: 100%;
+            height: 100%;
+            max-width: 500px;
+            margin: 0px auto;
+            display: flex;
+            align-items: center;
+        }
+        .content-article{
+            width: 90%;
+            height: auto;
+            float: left;
+            margin: 0 5%;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            padding: 18px;
+            box-sizing: border-box;
+            display: none;
+        }
+        .content-article-full{
+            width: 100%;
+            height: auto;
+            float: left;
+            background-color: #FFFFFF;
+            display: none;
+        }
+        .content-article-full img{
+            width: 100%;
+            height: auto;
+            float: left;
+            background-color: #FFFFFF;
+        }
+        .content-article-header{
+            width: 100%;
+            height: 60px;
+        }
+        .content-article-header img{
+            width: 60px;
+            height: 60px;
+            float: left;
+            border-radius: 5px;
+        }
+        .content-article-header-right{
+            width: 100%;
+            height: 60px;
+            box-sizing: border-box;
+            margin-top: -60px;
+            float: left;
+            padding: 5px 0 5px 70px;
+        }
+        .content-article-header-right h3{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            font-size: 1.1rem;
+            float: left;
+            margin: 0px;
+            padding: 0px;
+            font-weight: 500;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+        }
+        .content-article-header-right h5{
+            width: 100%;
+            height: 20px;
+            line-height: 20px;
+            font-size: 1rem;
+            float: left;
+            margin: 0px;
+            padding: 0px;
+            color: #999998;
+            font-weight: 400;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+        }
+        .content-article-qrcode{
+            width: 100%;
+            float: left;
+            margin: 20px 0px;
+        }
+        .content-article-footer{
+            width: 100%;
+            float: left;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 300;
+            height: 20px;
+            line-height: 20px;
+            color: #666666;
+        }
+        .public-container{
+            width: 100%;
+            float: left;
+            text-align: center;
+            display: none;
+        }
+        .error-images{
+            width: 80px;
+            height: 80px;
+            margin: 50px auto 10px auto;
+        }
+        .error-msg{
+            width: 100%;
+            float: left;
+            line-height: 30px;
+            text-align: center;
+            padding: 0px 15px;
+            box-sizing: border-box;
+            color: #666666;
+            font-size: 15px;
+        }
+    </style>
+    <script src="https://file.wailian2.cn/assets/js/v2/jquery-3.5.1-min.js?v=2023070601"></script>
+    <script src="https://file.wailian2.cn/assets/js/libs/cryptojs/md5.js?v=2023122201"></script>
+    <script src="https://file.wailian2.cn/assets/js/libs/cryptojs/aes.js?v=2023122201"></script>
+    <link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/open/libs/weui/2.4.0/weui.min.css?v=202207071010">
+</head>
+<body>
+    <div id="article_error" class="public-container"></div>
+    <div class="content">
+        <div class="content-article">
+            <div class="content-article-header">
+                <img src="" id="content-article-header-img">
+                <div class="content-article-header-right">
+                    <h3></h3>
+                    <h5></h5>
+                </div>
+            </div>
+            <img class="content-article-qrcode" src="" id="qrcode">
+            <div class="content-article-footer">
+                长按识别上方二维码加我微信
+            </div>
+        </div>
+        <div class="content-article-full">
+            <img id="full_qrcode" src="">
+        </div>
+    </div>
+    <script src="//wailiancn.oss-cn-beijing.aliyuncs.com/js/wl/wailian-wxqrcode.min.js?v=20240926"></script>
+</body>
+</html>
